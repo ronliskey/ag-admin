@@ -1,0 +1,21 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ResourceController;
+
+Route::view('/', 'welcome')->name('home');
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::view('dashboard', 'dashboard')->name('dashboard');
+});
+
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('add-resource', [ResourceController::class, 'index']);
+Route::post('store', [ResourceController::class, 'store']);
+
+
+require __DIR__.'/settings.php';
