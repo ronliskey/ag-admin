@@ -8,6 +8,7 @@ Route::view('/', 'welcome')->name('home');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
+    Route::view('resources', 'resources')->name('resources');
     Route::get('add-resource', [ResourceController::class, 'index']);
     Route::post('store', [ResourceController::class, 'store']);
 });

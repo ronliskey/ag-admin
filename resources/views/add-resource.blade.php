@@ -1,4 +1,4 @@
-<x-layouts::resources :title="__('Add Resource')">
+<x-layouts::app :title="__('Add Resource')">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <div class="container mt-4">
       @if(session('status'))
@@ -80,4 +80,4 @@
       </div>
     </div>
   </div>  
-</x-layouts::resources>
+</x-layouts::app>

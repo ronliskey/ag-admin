@@ -3,14 +3,17 @@
         <div class="grid auto-rows-min gap-4 md:grid-cols-3">
             <div class="relative aspect-video overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-700">
                 <h2>Resources</h2>
-
-                <a href="/add-resource/">Add Resource 1</a>
-
-                @if (Route::has('add-resource'))
+                @if (Route::has('resources'))
                     <a
-                        href="{{ route('add-resource') }}"
+                        href="{{ route('resources') }}"
                         class="inline-block dark:bg-[#eeeeec] dark:border-[#eeeeec] dark:text-[#1C1C1A] dark:hover:bg-white dark:hover:border-white hover:bg-black hover:border-black px-5 py-1.5 bg-[#1b1b18] rounded-sm border border-black text-white text-sm leading-normal">
-                        Add Resource 2
+                        Overview
+                    </a>
+
+                    <a
+                        href="/add-resource/"
+                        class="inline-block dark:bg-[#eeeeec] dark:border-[#eeeeec] dark:text-[#1C1C1A] dark:hover:bg-white dark:hover:border-white hover:bg-black hover:border-black px-5 py-1.5 bg-[#1b1b18] rounded-sm border border-black text-white text-sm leading-normal">
+                        Add
                     </a>
                 @endif
             </div>
