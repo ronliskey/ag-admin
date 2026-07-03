@@ -16,16 +16,16 @@
                         <svg class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                         </svg>
-                        {{ $resource->slug }}
+                        {{ $resource->summary }}
                     </span>
                     <span class="px-2 py-0.5 inline-flex text-xs leading-5 font-semibold rounded-full {{ $resource->status === 'publish' ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800' }}">
-                        {{ ucfirst($resource->status) }}
+                        {{ ucfirst($resource->draft) }}
                     </span>
                 </div>
             </div>
             <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3 items-end sm:items-center">
                 <a href="{{ route('resources.index') }}" class="text-sm font-medium text-gray-600 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md transition shadow-sm border border-gray-200">Back</a>
-                <a href="{{ route('resources.edit', $resource) }}" class="text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md shadow-sm transition">Edit Post</a>
+                <a href="{{ route('resources.edit', $resource) }}" class="text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md shadow-sm transition">Edit Resource</a>
             </div>
         </div>
 
@@ -39,9 +39,6 @@
                 <span>Updated: {{ $resource->updated_at->format('M d, Y H:i') }}</span>
             @endif
         </div>
-    </div>
-    <div class="mt-8 mb-6 text-center text-sm text-gray-500">
-        <a href="https://qadrlabs.com" class="text-blue-600 hover:text-blue-800 hover:underline transition" target="_blank">Tutorial CRUD Laravel 13 at qadrlabs.com</a>
     </div>
 </body>
 </html>

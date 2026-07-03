@@ -6,6 +6,7 @@ use App\Models\Resource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str; // add this line of code
 
+
 class ResourceController extends Controller
 {
     // ... [other lines of code]
@@ -21,9 +22,8 @@ class ResourceController extends Controller
 
         $validatedData = $request->validate([
             'title' => 'required|max:255',
-            'slug' => 'required|unique:resources,slug|max:255',
             'content' => 'required',
-            'status' => 'required|in:draft,publish',
+            'draft' => 'required|in:true,false',
         ]);
 
         Resource::create($validatedData);

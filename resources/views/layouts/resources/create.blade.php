@@ -40,11 +40,11 @@
             </div>
 
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Status</label>
-                <select name="status" required 
+                <label class="block text-sm font-medium text-gray-700 mb-1">Draft</label>
+                <select name="draft" required 
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none bg-white transition">
-                    <option value="draft" {{ old('status') == 'draft' ? 'selected' : '' }}>Draft</option>
-                    <option value="publish" {{ old('status') == 'publish' ? 'selected' : '' }}>Publish</option>
+                    <option value="true" {{ old('draft') == 'true' ? 'selected' : '' }}>True</option>
+                    <option value="false" {{ old('draft') == 'false' ? 'selected' : '' }}>False</option>
                 </select>
             </div>
 
@@ -54,11 +54,6 @@
                 </button>
             </div>
         </form>
-    </div>
-
-
-    <div class="mt-8 mb-6 text-center text-sm text-gray-500">
-        <a href="https://qadrlabs.com" class="text-blue-600 hover:text-blue-800 hover:underline transition" target="_blank">Tutorial CRUD Laravel 13 at qadrlabs.com</a>
     </div>
 </body>
 </html>

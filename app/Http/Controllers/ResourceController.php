@@ -1,13 +1,17 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str; // add this line of code
 use App\Models\Resource;
+
 class ResourceController extends Controller
 {
     // public function index()
     // {
     //     return view('add-resource');
     // }
+
+    // https://qadrlabs.com/post/laravel-13-crud-tutorial-build-a-simple-blog-step-by-step  
 
     public function index()
     {
@@ -17,21 +21,29 @@ class ResourceController extends Controller
 
     public function store(Request $request)
     {
-        $resource = new Resource;
-        $resource->url = $request->url;
-        $resource->title = $request->title;
-        $resource->banner = $request->banner;
-        $resource->summary = $request->summary;
-        $resource->authors = $request->authors;
-        $resource->categories = $request->categories;
-        $resource->topics = $request->topics;
-        $resource->activities = $request->activities;
-        $resource->opportunities = $request->opportunities;
-        $resource->regions = $request->regions;
-        $resource->language = $request->language;
-        $resource->content = $request->content;
-        $resource->save();
-        return redirect('add-resource')->with('status', 'Thank you. Accepted resources are published as soon as possible.');
+        // $request->merge([
+        //     'slug' => Str::slug($request->title),
+        // ]);
+
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'url' => 'required|max:255',
+            'banner' => 'max:255',
+            'summary' => 'required|max:255',
+            'authors' => 'max:255',
+            'categories' => 'max:255',
+            'topics' => 'max:255',
+            'activities' => 'max:255',
+            'opportunities' => 'max:255',
+            'regions' => 'max:255',
+            'language' => 'max:255',
+            'content' => 'max:512'
+        ]);
+
+        Resource::create($validatedData);
+
+        return redirect()->route('resources.index')->with('success', 'Resource created successfully.');
+        // return redirect('add-resource')->with('status', 'Thank you. Accepted resources are published as soon as possible.');
     }
 
 
@@ -42,25 +54,33 @@ class ResourceController extends Controller
 
     public function show(Resource $resource)
     {
-        return view('resource.show', compact('resource'));
+        return view('resources.show', compact('resource'));
     }
 
     public function edit(Resource $resource)
     {
-        return view('resources.edit', compact('resources'));
+        return view('resources.edit', compact('resource'));
     }
 
     public function update(Request $request, Resource $resource)
     {
-        $request->merge([
-            'slug' => Str::slug($request->title),
-        ]);
+        // $request->merge([
+        //     'slug' => Str::slug($request->title),
+        // ]);
 
         $validatedData = $request->validate([
             'title' => 'required|max:255',
-            'slug' => 'required|unique:resources,slug,' . $resource->id . '|max:255',
-            'content' => 'required',
-            'status' => 'required|in:draft,publish',
+            'url' => 'required|max:255',
+            'banner' => 'max:255',
+            'summary' => 'required|max:255',
+            'authors' => 'max:255',
+            'categories' => 'max:255',
+            'topics' => 'max:255',
+            'activities' => 'max:255',
+            'opportunities' => 'max:255',
+            'regions' => 'max:255',
+            'language' => 'max:255',
+            'content' => 'max:512'
         ]);
 
         $resource->update($validatedData);

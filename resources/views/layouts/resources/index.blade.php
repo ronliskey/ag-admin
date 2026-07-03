@@ -27,8 +27,8 @@
                     <tr>
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-16">No</th>
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Title</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Slug</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Summary</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Draft</th>
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                     </tr>
                 </thead>
@@ -37,10 +37,10 @@
                     <tr class="hover:bg-gray-50 transition duration-150">
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">{{ $resources->firstItem() + $loop->index }}</td>
                         <td class="px-6 py-4 text-sm font-medium text-gray-900">{{ $resource->title }}</td>
-                        <td class="px-6 py-4 text-sm text-gray-500 break-words">{{ $resource->slug }}</td>
+                        <td class="px-6 py-4 text-sm text-gray-500 break-words">{{ $resource->summary }}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm">
                             <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full {{ $resource->status === 'publish' ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800' }}">
-                                {{ ucfirst($resource->status) }}
+                                {{ ucfirst($resource->draft) }}
                             </span>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
@@ -65,9 +65,6 @@
         <div class="mt-6">
             {{ $resources->links() }}
         </div>
-    </div>
-    <div class="mt-8 mb-6 text-center text-sm text-gray-500">
-        <a href="https://qadrlabs.com" class="text-blue-600 hover:text-blue-800 hover:underline transition" target="_blank">Tutorial CRUD Laravel 13 at qadrlabs.com</a>
     </div>
 </body>
 </html>

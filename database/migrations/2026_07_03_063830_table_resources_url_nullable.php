@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('resources', function (Blueprint $table) {
-            $table->renameColumn('region', 'regions');
+        Schema::table('resources', function ($table) {
+            $table->string('url', 255)->nullable()->change();
         });
     }
 
@@ -21,8 +21,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('resources', function (Blueprint $table) {
-            $table->renameColumn('regions', 'region');
-        });
+        $table->string('url', 255)->change();
     }
 };

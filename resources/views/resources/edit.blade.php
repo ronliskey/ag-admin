@@ -25,6 +25,11 @@
 
         <form action="{{ route('resources.update', $resource) }}" method="POST" class="space-y-6">
             @csrf
+
+            <!-- 
+                @method('PUT') adds a hidden field that tells Laravel to treat this 
+                form submission as a PUT request, which maps to the update() controller method. 
+            -->
             @method('PUT')
 
             <div>
@@ -33,21 +38,70 @@
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition">
             </div>
 
-
-
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Content</label>
-                <textarea name="content" rows="8" required 
-                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition resize-y">{{ old('content', $resource->content) }}</textarea>
+                <label class="block text-sm font-medium text-gray-700 mb-1">URL</label>
+                <input type="text" id="url" name="url" value="{{ old('url', $resource->url) }}" required 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition">
             </div>
 
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Status</label>
-                <select name="status" required 
-                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none bg-white transition">
-                    <option value="draft" {{ old('status', $resource->status) == 'draft' ? 'selected' : '' }}>Draft</option>
-                    <option value="publish" {{ old('status', $resource->status) == 'publish' ? 'selected' : '' }}>Publish</option>
-                </select>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Banner</label>
+                <input type="text" id="banner" name="banner" value="{{ old('banner') }}"  
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Summary</label>
+                <textarea name="summary" rows="8" required 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition resize-y">{{ old('summary', $resource->summary) }}</textarea>
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Authors</label>
+                <input type="text" id="authors" name="authors" value="{{ old('authors') }}"  
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+            </div>
+
+                         <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Categories</label>
+                <input type="text" id="categories" name="categories" value="{{ old('categories') }}"  
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Topics</label>
+                <input type="text" id="topics" name="topics" value="{{ old('topics') }}"  
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Activities</label>
+                <input type="text" id="activities" name="activities" value="{{ old('activities') }}"  
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Opportunities</label>
+                <input type="text" id="opportunities" name="opportunities" value="{{ old('opportunities') }}"  
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Regions</label>
+                <input type="text" id="regions" name="regions" value="{{ old('regions') }}"  
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Language</label>
+                <input type="text" id="language" name="language" value="{{ old('language') }}"  
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Content</label>
+                <textarea name="content" rows="8"  
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition resize-y">{{ old('content', $resource->content) }}</textarea>
             </div>
 
             <div class="pt-2 flex justify-end">
@@ -56,11 +110,6 @@
                 </button>
             </div>
         </form>
-    </div>
-
-
-    <div class="mt-8 mb-6 text-center text-sm text-gray-500">
-        <a href="https://qadrlabs.com" class="text-blue-600 hover:text-blue-800 hover:underline transition" target="_blank">Tutorial CRUD Laravel 13 at qadrlabs.com</a>
     </div>
 </body>
 </html>
