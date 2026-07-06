@@ -62,8 +62,44 @@
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition">
             </div>
 
-                         <div>
+            <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Categories</label>
+
+                <div style="margin: 0 0 1em 2em">
+                    <label>
+                        <input type="checkbox" 
+                            name="categories-choose[]" 
+                            value="Environmental Sustainability"> Environmental Sustainability
+                    </label> <br>
+
+                    <label>
+                        <input type="checkbox" 
+                            name="categories-choose[]" 
+                            value="Social Justice"> Social Justice
+                    </label><br>
+
+                    <label>
+                        <input type="checkbox" 
+                            name="categories-choose[]" 
+                            value="Democracy and Elections"> Democracy and Elections
+                    </label><br>
+
+                    <label>
+                        <input type="checkbox" 
+                            name="categories-choose[]" 
+                            value="News and Analysis"> News and Analysis
+                    </label><br>
+
+                    <label>
+                        <input type="checkbox" 
+                            name="categories-choose[]" 
+                            value="Strategy, Tactics and Tools"> Strategy, Tactics and Tools
+                    <label>
+                </div>
+            <div>
+
+                 <label class="block text-sm font-medium text-gray-700 mb-1">Additional Categories (separate with commas)</label>
+                    
                 <input type="text" id="categories" name="categories" value="{{ old('categories') }}"  
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition">
             </div>
