@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Resource - {{ $resource->title }}</title>
+    <title>views:layouts:resources:show: View Resource - {{ $resource->title }}</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans p-6">
     <div class="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-md mt-6">
         <div class="flex justify-between items-start mb-6 pb-6 border-b border-gray-200">
             <div>
-                <h1 class="text-3xl font-bold text-gray-900 mb-2">{{ $resource->title }}</h1>
+                <h1 class="text-3xl font-bold text-gray-900 mb-2">views:layouts:resources:show: {{ $resource->title }}</h1>
                 <div class="flex items-center space-x-4 text-sm text-gray-500">
                     <span class="flex items-center">
                         <svg class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">

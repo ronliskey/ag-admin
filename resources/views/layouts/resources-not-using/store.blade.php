@@ -22,8 +22,16 @@ class ResourceController extends Controller
 
         $validatedData = $request->validate([
             'title' => 'required|max:255',
-            'content' => 'required',
-            'draft' => 'required|in:true,false',
+            'url' => 'required|max:255',
+            'banner' => 'max:255',
+            'summary' => 'required|max:512',
+            'categories' => 'max:255',
+            'topics' => 'max:255',
+            'activities' => 'max:255',
+            'opportunities' => 'max:255',
+            'regions' => 'max:255',
+            'language' => 'max:255',
+            'content' => 'max:512',
         ]);
 
         Resource::create($validatedData);

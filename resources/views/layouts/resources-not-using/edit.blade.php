@@ -9,7 +9,7 @@
 <body class="bg-gray-100 text-gray-800 font-sans p-6">
     <div class="max-w-2xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-md">
         <div class="flex justify-between items-center mb-6">
-            <h1 class="text-2xl font-bold text-gray-900">Edit Resource</h1>
+            <h1 class="text-2xl font-bold text-gray-900">views:layouts:resources:edit: Edit Resource</h1>
             <a href="{{ route('resources.index') }}" class="text-gray-600 hover:text-gray-900 underline text-sm transition">Back to Manage Resources</a>
         </div>
 

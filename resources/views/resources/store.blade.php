@@ -19,6 +19,7 @@ class ResourceController extends Controller
             'title' => 'required|max:255',
             'url' => 'required|max:255',
             'banner' => 'max:255',
+            'authors' => 'max:255',
             'summary' => 'required|max:512',
             'categories' => 'max:255',
             'topics' => 'max:255',

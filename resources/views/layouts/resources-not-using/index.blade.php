@@ -9,7 +9,7 @@
 <body class="bg-gray-100 text-gray-800 font-sans p-6">
     <div class="max-w-7xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-md">
         <div class="flex justify-between items-center mb-6">
-            <h1 class="text-3xl font-bold text-gray-900">Manage Resources</h1>
+            <h1 class="text-3xl font-bold text-gray-900">views:layouts:resources:index: Manage Resources</h1>
             <a href="{{ route('resources.create') }}" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition duration-200 shadow-sm">
                 Create New Resource
             </a>

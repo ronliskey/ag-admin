@@ -23,12 +23,6 @@
             </div>
         @endif
 
-        <div class="bg-blue-50 border border-blue-200 text-blue-600 px-4 py-3 rounded mb-6">
-            <ul class="list-disc list-inside text-sm">
-                <li>Using: views/resources/edit</li>
-            </ul>
-        </div>
-
         <form action="{{ route('resources.update', $resource) }}" method="POST" class="space-y-6">
             @csrf
 
@@ -52,7 +46,7 @@
 
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Banner</label>
-                <input type="text" id="banner" name="banner" value="{{ old('banner', $resource->banner) }}"  
+                <input type="text" id="banner" name="banner" value="{{ old('banner') }}"  
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition">
             </div>
 
@@ -64,43 +58,43 @@
 
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Authors</label>
-                <input type="text" id="authors" name="authors" value="{{ old('authors', $resource->authors) }}"  
+                <input type="text" id="authors" name="authors" value="{{ old('authors') }}"  
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition">
             </div>
 
                          <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Categories</label>
-                <input type="text" id="categories" name="categories" value="{{ old('categories', $resource->categories) }}"  
+                <input type="text" id="categories" name="categories" value="{{ old('categories') }}"  
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition">
             </div>
 
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Topics</label>
-                <input type="text" id="topics" name="topics" value="{{ old('topics', $resource->topics) }}"  
+                <input type="text" id="topics" name="topics" value="{{ old('topics') }}"  
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition">
             </div>
 
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Activities</label>
-                <input type="text" id="activities" name="activities" value="{{ old('activities', $resource->activities) }}"  
+                <input type="text" id="activities" name="activities" value="{{ old('activities') }}"  
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition">
             </div>
 
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Opportunities</label>
-                <input type="text" id="opportunities" name="opportunities" value="{{ old('opportunities', $resource->opportunities) }}"  
+                <input type="text" id="opportunities" name="opportunities" value="{{ old('opportunities') }}"  
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition">
             </div>
 
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Regions</label>
-                <input type="text" id="regions" name="regions" value="{{ old('regions', $resource->regions) }}"  
+                <input type="text" id="regions" name="regions" value="{{ old('regions') }}"  
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition">
             </div>
 
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Language</label>
-                <input type="text" id="language" name="language" value="{{ old('language', $resource->language) }}"  
+                <input type="text" id="language" name="language" value="{{ old('language') }}"  
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition">
             </div>
 

@@ -23,6 +23,12 @@
             </div>
         @endif
 
+        <div class="bg-blue-50 border border-blue-200 text-blue-600 px-4 py-3 rounded mb-6">
+            <ul class="list-disc list-inside text-sm">
+                <li>Using: views/resources/create</li>
+            </ul>
+        </div>
+
         <form action="{{ route('resources.store') }}" method="POST" class="space-y-6">
             @csrf
 

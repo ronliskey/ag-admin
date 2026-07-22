@@ -18,6 +18,12 @@
             </a>
         </div>
 
+        <div class="bg-blue-50 border border-blue-200 text-blue-600 px-4 py-3 rounded mb-6">
+            <ul class="list-disc list-inside text-sm">
+                <li>Using: views/resources/index</li>
+            </ul>
+        </div>
+
         @if(session('success'))
             <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-6" role="alert">
                 <span class="block sm:inline">{{ session('success') }}</span>
@@ -39,8 +45,8 @@
                     @forelse($resources as $resource)
                     <tr class="hover:bg-gray-50 transition duration-150">
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">{{ $resources->firstItem() + $loop->index }}</td>
-                        <td class="px-6 py-4 text-sm font-medium text-gray-900">{{ $resource->title }}</td>
-                        <td class="px-6 py-4 text-sm font-medium text-gray-900">{{ $resource->url }}</td>
+                        <td class="px-6 py-4 text-sm font-bold text-gray-900">{{ $resource->title }}</td>
+                        <td class="px-6 py-4 text-sm font-medium text-gray-900"><a href="{{ $resource->url }}" target="_blank">{{ $resource->url }}&nbsp;&raquo;</a></td>
                         <td class="px-6 py-4 text-sm text-gray-500 break-words">{{ $resource->summary }}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
                             <a href="{{ route('resources.show', $resource) }}" class="inline-flex items-center px-3 py-1.5 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-700 focus:outline-none transition ease-in-out duration-150 shadow-sm">View</a>

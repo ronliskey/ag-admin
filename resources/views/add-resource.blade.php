@@ -66,7 +66,7 @@
           </div>
 
           <div class="form-group">
-            <label for="exampleInputEmail1">Langauge</label>
+            <label for="exampleInputEmail1">Language</label>
             <input type="text" id="language" name="language" class="form-control" required="">
           </div>
 
