@@ -41,7 +41,20 @@
         <div class="prose max-w-none text-gray-800 leading-relaxed whitespace-pre-wrap text-[17px]">Regs: {{ $resource->regions }}</div>
         <div class="prose max-w-none text-gray-800 leading-relaxed whitespace-pre-wrap text-[17px]">Lang: {{ $resource->language }}</div>
 
-        <div class="prose max-w-none text-gray-800 leading-relaxed whitespace-pre-wrap text-[17px]">{{ $resource->content }}</div>
+        @if($resource->links->isNotEmpty())
+            <section class="mt-6">
+                <h2 class="text-lg font-semibold text-gray-900">Additional Links</h2>
+                <ul class="mt-2 list-disc space-y-1 pl-5">
+                    @foreach($resource->links as $link)
+                        <li><a class="text-blue-700 underline hover:text-blue-900" href="{{ $link->url }}" target="_blank" rel="noopener noreferrer">{{ $link->label }}</a></li>
+                    @endforeach
+                </ul>
+            </section>
+        @endif
+
+        @if($resource->content)
+            <div class="prose max-w-none text-gray-800 leading-relaxed whitespace-pre-wrap text-[17px]">{{ $resource->content }}</div>
+        @endif
 
         <div class="mt-10 pt-6 border-t border-gray-100 flex flex-col sm:flex-row sm:justify-between text-sm text-gray-500">
             <span>Created: {{ $resource->created_at->format('M d, Y H:i') }}</span>
