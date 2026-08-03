@@ -19,6 +19,12 @@ class ResourceController extends Controller
         return view('resources.index', compact('resources'));
     }
 
+     public function list()
+    {
+        $resources = Resource::latest()->paginate(10);
+        return view('resources.list', compact('resources'));
+    }
+
     public function store(Request $request)
     {
         // $request->merge([

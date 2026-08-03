@@ -42,9 +42,18 @@
             </div>
 
             <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3 items-end sm:items-center">
-                <a href="{{ route('resources.index') }}" class="text-sm font-medium text-gray-600 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md transition shadow-sm border border-gray-200">Back</a>
-                <a href="{{ route('resources.edit', $resource) }}" class="text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md shadow-sm transition">Edit Resource</a>
+                @auth
+                    <a href="{{ route('resources.index') }}" class="text-sm font-medium text-gray-600 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md transition shadow-sm border border-gray-200">Back</a>
+                    
+                    <a href="{{ route('resources.edit', $resource) }}" class="text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md shadow-sm transition">Edit</a>
+
+                    <form method="POST" action="http://localhost:8000/logout" class="w-full">
+                <input type="hidden" name="_token" value="AuAow2X0aMyh13hal0G9e58x886X2ALbA0vQF1GM" autocomplete="off">                <button type="submit" class="text-sm font-medium text-white bg-red-700 hover:bg-red-600 px-4 py-2 rounded-md shadow-sm transition"" data-flux-menu-item="data-flux-menu-item" data-flux-menu-item-has-icon="data-flux-menu-item-has-icon" data-test="logout-button">Log out</button>
+            </form>
+
+                @endif
             </div>
+            
         </div>
         
     @if($resource->categories)
