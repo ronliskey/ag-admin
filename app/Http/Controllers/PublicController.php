@@ -18,7 +18,10 @@ class PublicController extends Controller
         return view('public.list', compact('resources'));
     }
 
-
+    public function display(Resource $resource)
+    {
+        return view('public.display', compact('resource'));
+    }
 
 
 }
